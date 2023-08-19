@@ -12,6 +12,12 @@ int _putchar(char c)
         return (write(1, &c, 1));
 }
 
+/**
+ * _puts - writes the character c to stdout
+ * @c: The character to print
+ *
+ * Return: void
+ */
 void _puts(char *s)
 {
         while (*s)
@@ -34,6 +40,7 @@ int _strlen(const char *str)
 
         while (*str++)
                 length++;
+
         return (length);
 }
 
@@ -50,17 +57,18 @@ void _print_char(va_list arg)
         _putchar(letter);
 }
 
+/**
+ * _print_string - writes the character c to stdout
+ * @arg: A list of arguments pointing to
+ *       the character to be printed.
+ *
+ * Return: length of string
+ */
 int _print_string(va_list arg)
 {
         char *str;
 
         str = va_arg(arg, char *);
-
-        while (*str)
-        {
-                _putchar(*str);
-                str++;
-        }
-
+        _puts(str);
         return (_strlen(str));
 }
