@@ -14,12 +14,27 @@ int _putchar(char c)
 
 void _puts(char *s)
 {
-        int i;
-
-        for (i = 0; s[i] != '\0'; i++)
+        while (*s)
         {
-                _putchar(s[i]);
+                _putchar(*s);
+                s++;
         }
+}
+
+/**
+ * _strlen - a function that gets a length of a tring
+ *
+ * @str: sting to get length
+ *
+ * Return: length of string
+ */
+int _strlen(const char *str)
+{
+        int length = 0;
+
+        while (*str++)
+                length++;
+        return (length);
 }
 
 /**
@@ -35,11 +50,17 @@ void _print_char(va_list arg)
         _putchar(letter);
 }
 
-void _print_string(va_list arg)
+int _print_string(va_list arg)
 {
         char *str;
 
         str = va_arg(arg, char *);
 
-        _puts(str);
+        while (*str)
+        {
+                _putchar(*str);
+                str++;
+        }
+
+        return (_strlen(str));
 }
