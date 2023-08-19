@@ -79,5 +79,5 @@ int _print_string(va_list arg)
 	else
 		_puts("(null)");
 
-	return (0);
+	return (6);
 }
