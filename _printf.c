@@ -1,6 +1,24 @@
 #include "main.h"
 
 /**
+ * base_check - base check of the input
+ * @format: string input
+ *
+ * Return: -1 if something wrong
+ */
+int base_check(char *f)
+{
+	if ((f[0] == '%' && !f[1]) || !f)
+	{
+		return (-1);
+	}
+	if (f[0] == '%' && f[1] == ' ' && !f[2])
+	{
+		return (-1);
+	}
+}
+
+/**
  * _printf - produces output according to a format
  * @format: string input
  *
@@ -11,16 +29,10 @@ int _printf(const char *format, ...)
 	va_list args;
 	int i = 0;
 	int len = 0;
-	va_start(args, format);
 
-	if ((format[0] == '%' && !format[1]) || !format)
-	{
-		return (-1);
-	}
-	if (format[0] == '%' && format[1] == ' ' && !format[2])
-	{
-		return (-1);
-	}
+	va_start(args, format);
+	base_check(format);
+
 	while (format && (*(format + i)))
 	{
 		if (*(format + i) != '%')
@@ -49,7 +61,7 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
-
 	va_end(args);
+
 	return (i);
 }
