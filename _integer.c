@@ -11,10 +11,10 @@ void print_number(int n);
  */
 void _print_number(va_list arg)
 {
-    int num;
+	int num;
 
-    num = va_arg(arg, int);
-    print_number(num);
+	num = va_arg(arg, int);
+	print_number(num);
 }
 
 /**
@@ -26,18 +26,18 @@ void _print_number(va_list arg)
  */
 void print_number(int n)
 {
-    unsigned int num = n;
+	unsigned int num = n;
 
-    if (n < 0)
-    {
-        _putchar('-');
-        num = -n;
-    }
+	if (n < 0)
+	{
+		_putchar('-');
+		num = -n;
+	}
 
-    if (num / 10)
-    {
-        print_number(num / 10);
-    }
+	if (num / 10)
+	{
+		print_number(num / 10);
+	}
 
-    _putchar((num % 10) + '0');
+	_putchar((num % 10) + '0');
 }
