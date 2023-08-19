@@ -6,7 +6,7 @@
  *
  * Return: -1 if something wrong
  */
-int base_check(char *f)
+int base_check(const char *f)
 {
 	if ((f[0] == '%' && !f[1]) || !f)
 	{
@@ -16,6 +16,8 @@ int base_check(char *f)
 	{
 		return (-1);
 	}
+
+	return (0);
 }
 
 /**
