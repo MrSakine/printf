@@ -1,5 +1,8 @@
 #include "main.h"
 
+int run(const char *format, va_list args);
+void end(va_list args);
+
 /**
  * base_check - base check of the input
  * @f: string input
@@ -15,18 +18,30 @@ int base_check(const char *f)
 }
 
 /**
- * _printf - produces output according to a format
+ * end - clean the arguments list
+ * @args: A list of arguments pointing to
+ *       the character to be printed.
+ *
+ * Return: void
+ */
+void end(va_list args)
+{
+	va_end(args);
+}
+
+/**
+ * run - run the printf function
  * @format: string input
+ * @args: A list of arguments pointing to
+ *       the character to be printed.
  *
  * Return: number of characters printed (int)
  */
-int _printf(const char *format, ...)
+int run(const char *format, va_list args)
 {
-	va_list args;
-	int i = 0;
 	int len = 0;
+	int i = 0;
 
-	va_start(args, format);
 	while (format && (*(format + i)))
 	{
 		if (*(format + i) != '%')
@@ -61,7 +76,29 @@ int _printf(const char *format, ...)
 		}
 		i++;
 	}
-	va_end(args);
 
-	return (i);
+	return (len);
+}
+
+/**
+ * _printf - produces output according to a format
+ * @format: string input
+ *
+ * Return: number of characters printed (int)
+ */
+int _printf(const char *format, ...)
+{
+	va_list args;
+	int len = 0;
+
+	if (format == NULL)
+	{
+		return (-1);
+	}
+
+	va_start(args, format);
+	len = run(format, args);
+	end(args);
+
+	return (len);
 }
