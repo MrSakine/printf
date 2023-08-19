@@ -69,7 +69,13 @@ int _print_string(va_list arg)
 	char *str;
 
 	str = va_arg(arg, char *);
-	_puts(str);
 
-	return (_strlen(str));
+	if (str != NULL)
+	{
+		_puts(str);
+
+		return (_strlen(str));
+	}
+
+	return (0);
 }
