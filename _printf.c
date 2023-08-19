@@ -2,7 +2,7 @@
 
 /**
  * base_check - base check of the input
- * @format: string input
+ * @f: string input
  *
  * Return: -1 if something wrong
  */
@@ -51,6 +51,7 @@ int _printf(const char *format, ...)
 			else if (*(format + i) == 's')
 			{
 				int n = _print_string(args);
+
 				len += n;
 			}
 			else if (*(format + i) == 'c')
