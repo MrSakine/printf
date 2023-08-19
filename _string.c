@@ -70,5 +70,6 @@ int _print_string(va_list arg)
 
 	str = va_arg(arg, char *);
 	_puts(str);
+
 	return (_strlen(str));
 }
