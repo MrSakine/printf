@@ -27,8 +27,6 @@ int _printf(const char *format, ...)
 	int len = 0;
 
 	va_start(args, format);
-	base_check(format);
-
 	while (format && (*(format + i)))
 	{
 		if (*(format + i) != '%')
