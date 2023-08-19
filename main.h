@@ -10,6 +10,7 @@ void _puts(char *s);
 int _printf(const char *format, ...);
 void _print_char(va_list arg);
 int _print_string(va_list arg);
+void _print_number(va_list arg);
 int base_check(const char *f);
 
 #endif /* MAIN_H */

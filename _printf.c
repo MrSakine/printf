@@ -53,6 +53,11 @@ int _printf(const char *format, ...)
 				_print_char(args);
 				len++;
 			}
+			else if (*(format + i) == 'd' || *(format + i) == 'i')
+			{
+				_print_number(args);
+				len++;
+			}
 		}
 		i++;
 	}
