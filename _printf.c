@@ -15,6 +15,8 @@ int base_check(const char *f)
 		return (-1);
 	if (f[0] == '%' && f[1] == '\0')
 		return (-1);
+	if (f == NULL)
+		return (-1);
 
 	return (0);
 }
