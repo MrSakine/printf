@@ -80,6 +80,13 @@ int run(const char *format, va_list args)
 				_print_number(args);
 				len++;
 			}
+			else
+			{
+				_putchar(*(format + (i - 1)));
+				len++;
+				_putchar(*(format + i));
+				len++;
+			}
 		}
 		i++;
 	}
