@@ -11,7 +11,9 @@ void end(va_list args);
  */
 int base_check(const char *f)
 {
-	if ((f[0] == '%' && (!f[1] || !f)) || (f[1] == ' ' && !f[2]))
+	if (f[0] == '%' && f[1] == ' ')
+		return (-1);
+	if (f[0] == '%' && f[1] == '\0')
 		return (-1);
 
 	return (0);
@@ -41,6 +43,9 @@ int run(const char *format, va_list args)
 {
 	int len = 0;
 	int i = 0;
+
+	if (base_check(format) == -1)
+		return (-1);
 
 	while (format && (*(format + i)))
 	{
@@ -91,14 +96,8 @@ int _printf(const char *format, ...)
 	va_list args;
 	int len = 0;
 
-	if (format == NULL)
-	{
-		return (-1);
-	}
-
 	va_start(args, format);
 	len = run(format, args);
 	end(args);
-
 	return (len);
 }
