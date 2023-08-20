@@ -33,6 +33,7 @@ int print_number(int n)
 	{
 		_putchar('-');
 		num = -n;
+		len++;
 	}
 
 	if (num / 10)
