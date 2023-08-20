@@ -49,12 +49,14 @@ int _strlen(const char *str)
  * @arg: A list of arguments pointing to
  *       the character to be printed.
  */
-void _print_char(va_list arg)
+int _print_char(va_list arg)
 {
 	char letter;
 
 	letter = va_arg(arg, int);
 	_putchar(letter);
+
+	return (1);
 }
 
 /**

@@ -65,32 +65,16 @@ int run(const char *format, va_list args)
 				len++;
 			}
 			else if (*(format + i) == 's')
-			{
-				int n = _print_string(args);
-
-				len += n;
-			}
+				len += _print_string(args);
 			else if (*(format + i) == 'c')
-			{
-				_print_char(args);
-				len++;
-			}
+				len += _print_char(args);
 			else if (*(format + i) == 'd' || *(format + i) == 'i')
-			{
-				_print_number(args);
-				len++;
-			}
+				len += _print_number(args);
 			else
-			{
-				_putchar(*(format + (i - 1)));
-				len++;
-				_putchar(*(format + i));
-				len++;
-			}
+				len += _print_invalid_specifier_output(format, i);
 		}
 		i++;
 	}
-
 	return (len);
 }
 
