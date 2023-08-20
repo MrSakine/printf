@@ -1,6 +1,6 @@
 #include "main.h"
 
-void print_number(int n);
+int print_number(int n);
 
 /**
  * _print_number - print numbers
@@ -9,12 +9,12 @@ void print_number(int n);
  *
  * Return: length of string
  */
-void _print_number(va_list arg)
+int _print_number(va_list arg)
 {
 	int num;
 
 	num = va_arg(arg, int);
-	print_number(num);
+	return print_number(num);
 }
 
 /**
@@ -24,9 +24,10 @@ void _print_number(va_list arg)
  *
  * Return: void.
  */
-void print_number(int n)
+int print_number(int n)
 {
 	unsigned int num = n;
+	int len = 1;
 
 	if (n < 0)
 	{
@@ -35,9 +36,9 @@ void print_number(int n)
 	}
 
 	if (num / 10)
-	{
-		print_number(num / 10);
-	}
+		len += print_number(num / 10);
 
 	_putchar((num % 10) + '0');
+
+	return (len);
 }
