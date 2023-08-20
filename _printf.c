@@ -98,6 +98,9 @@ int _printf(const char *format, ...)
 	va_list args;
 	int len = 0;
 
+	if (format == NULL)
+		return (-1);
+
 	va_start(args, format);
 	len = run(format, args);
 	end(args);
