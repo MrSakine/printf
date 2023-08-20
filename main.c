@@ -10,7 +10,7 @@ int main(void)
 {
 	int r;
 
-	r = _printf("%s", 1);
+	r = _printf("Unknown: [%r]\n");
 	printf("%d\n", r);
 	return (0);
 }
