@@ -68,9 +68,6 @@ int _print_string(va_list arg)
 {
 	char *str;
 
-	if (va_arg(arg, int))
-		return (-1);
-
 	str = va_arg(arg, char *);
 	if (str == NULL)
 	{
