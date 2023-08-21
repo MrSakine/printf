@@ -8,32 +8,31 @@
  */
 int _print_binary(va_list args)
 {
-    unsigned int num = va_arg(args, unsigned int);
-    char binary[32];
-    int len = 1, j;
+	unsigned int num = va_arg(args, unsigned int);
+	char binary[32];
+	int len = 1, j;
 
-    if (num == 0)
-    {
-        _putchar('0');
-        len++;
-    }
-    else
-    { 
-        int i = 0;
+	if (num == 0)
+	{
+		_putchar('0');
+		len++;
+	}
+	else
+	{
+		int i = 0;
 
-        while (num > 0)
-        {
-            binary[i] = num % 2 + '0';
-            num /= 2;
-            i++;
-        }
+		while (num > 0)
+		{
+			binary[i] = num % 2 + '0';
+			num /= 2;
+			i++;
+		}
 
-        for (j = i - 1; j >= 0; j--)
-        {
-            _putchar(binary[j]);
-            len++;
-        }
-    }
-
-    return len;
+		for (j = i - 1; j >= 0; j--)
+		{
+			_putchar(binary[j]);
+			len++;
+		}
+	}
+	return (len);
 }
