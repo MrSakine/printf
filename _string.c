@@ -47,7 +47,9 @@ int _strlen(const char *str)
 /**
  * _print_char - Prints a char.
  * @arg: A list of arguments pointing to
- *       the character to be printed.
+ * the character to be printed
+ *
+ * Return: Returns 1 and 0 otherwise
  */
 int _print_char(va_list arg)
 {
