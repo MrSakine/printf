@@ -70,8 +70,8 @@ int run(const char *format, va_list args)
 				len += _print_char(args);
 			else if (*(format + i) == 'd' || *(format + i) == 'i')
 				len += _print_number(args);
-            else if (*(format + i) == 'b')
-                len += _print_binary(args);
+			else if (*(format + i) == 'b')
+				len += _print_binary(args);
 			else
 				len += _print_invalid_specifier_output(format, i);
 		}
