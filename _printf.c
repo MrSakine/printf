@@ -45,6 +45,8 @@ int run(const char *format, va_list args)
 {
 	int len = 0;
 	int i = 0;
+	char buffer[BUFFER_SIZE];
+	int buffer_index = 0;
 
 	if (base_check(format) == -1)
 		return (-1);
@@ -53,15 +55,16 @@ int run(const char *format, va_list args)
 	{
 		if (*(format + i) != '%')
 		{
-			_putchar(*(format + i));
+			_add_to_buffer(buffer, &buffer_index, format + 1, 1);
 			len++;
 		}
 		else
 		{
 			format++;
+
 			if (*(format + i) == '%')
 			{
-				_putchar('%');
+				_add_to_buffer(buffer, &buffer_index, format, 1);
 				len++;
 			}
 			else if (*(format + i) == 's')
@@ -77,6 +80,12 @@ int run(const char *format, va_list args)
 		}
 		i++;
 	}
+
+	if (buffer_index > 0)
+	{
+		write(1, buffer, buffer_index);
+	}
+
 	return (len);
 }
 

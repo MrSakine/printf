@@ -9,6 +9,7 @@
  */
 int _putchar(char c)
 {
+
 	return (write(1, &c, 1));
 }
 
@@ -28,7 +29,7 @@ void _puts(char *s)
 }
 
 /**
- * _strlen - a function that gets a length of a tring
+ * _strlen - a function that gets a length of a string
  *
  * @str: sting to get length
  *
