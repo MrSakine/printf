@@ -13,5 +13,6 @@ int _print_string(va_list arg);
 int _print_number(va_list arg);
 int base_check(const char *f);
 int _print_invalid_specifier_output(char const *format, int index);
+int _print_binary(va_list args);
 
 #endif /* MAIN_H */
