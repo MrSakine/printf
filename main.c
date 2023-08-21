@@ -27,5 +27,7 @@ int main(void)
 	len2 = printf("Negative:[%d]\n", -762534);
 	_printf("Len:[%d]\n", len);
 	printf("Len:[%d]\n", len2);
+	_printf("Binary:[%b]\n", len);
+	printf("Binary:[%b]\n", len2);
 	return (0);
 }
