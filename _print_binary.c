@@ -28,12 +28,6 @@ int _print_binary(va_list args)
 			i++;
 		}
 
-        while (i < 32)
-        {
-            binary[i] = '0';
-            i++;
-        }
-
 		for (j = i - 1; j >= 0; j--)
 		{
 			_putchar(binary[j]);
