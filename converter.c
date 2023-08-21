@@ -18,3 +18,4 @@ int _print_invalid_specifier_output(char const *format, int index)
 
 	return (len);
 }
+

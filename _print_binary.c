@@ -9,7 +9,7 @@
 int _print_binary(va_list args)
 {
 	unsigned int num = va_arg(args, unsigned int);
-	char binary[32];
+	char binary[33];
 	int len = 1, j;
 
 	if (num == 0)
@@ -27,6 +27,12 @@ int _print_binary(va_list args)
 			num /= 2;
 			i++;
 		}
+
+        while (i < 32)
+        {
+            binary[i] = '0';
+            i++;
+        }
 
 		for (j = i - 1; j >= 0; j--)
 		{
