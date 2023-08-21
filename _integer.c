@@ -14,7 +14,7 @@ int _print_number(va_list arg)
 	int num;
 
 	num = va_arg(arg, int);
-	return print_number(num);
+	return (print_number(num));
 }
 
 /**
