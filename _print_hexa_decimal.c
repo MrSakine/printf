@@ -114,9 +114,9 @@ int print_hexa_decimal_leading_zero(unsigned int num, int mode)
 
 	h[i] = '\0';
 
+	len += _putchar('0');
 	for (j = i - 1; j >= 0; j--)
 	{
-		len += _putchar('0');
 		len += _putchar(h[j]);
 	}
 
