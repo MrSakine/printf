@@ -56,7 +56,7 @@ int _print_char(va_list arg)
 	char letter;
 
 	letter = va_arg(arg, int);
-	return _putchar(letter);
+	return (_putchar(letter));
 }
 
 /**
