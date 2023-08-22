@@ -17,6 +17,7 @@ print_t *get_specifiers()
         {"o", _print_octal},
         {"x", _print_hexa_decimal_small},
         {"X", _print_hexa_decimal_large},
+        {"S", _print_string_ascii},
     };
 
     return (specifiers);
