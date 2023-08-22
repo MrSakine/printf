@@ -60,6 +60,7 @@ int print_number(int n, int mode)
 		{
 			_putchar('0');
 			len++;
+			return (len);
 		}
 	}
 
