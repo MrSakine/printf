@@ -36,6 +36,7 @@ int _print_invalid_specifier_output(char const *format, int index);
 int _print_binary(va_list args);
 int _print_octal(va_list args);
 int print_hexa_decimal(unsigned int num, int mode);
+int print_hexa_decimal_leading_zero(unsigned int num, int mode);
 int _print_hexa_decimal_small(va_list args);
 int _print_hexa_decimal_large(va_list args);
 print_t *get_specifiers(void);

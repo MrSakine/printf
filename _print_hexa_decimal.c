@@ -79,8 +79,45 @@ int print_hexa_decimal(unsigned int num, int mode)
 
 	for (j = i - 1; j >= 0; j--)
 	{
-		_putchar(h[j]);
-		len++;
+		len += _putchar(h[j]);
+	}
+
+	return (len);
+}
+
+/**
+ * print_hexa_decimal_leading_zero - prints an unsigned integer in hexa format
+ * @num: integer to print
+ * @mode: type of integer
+ *
+ * Return: number of characters printed (int)
+ */
+int print_hexa_decimal_leading_zero(unsigned int num, int mode)
+{
+	int len = 0;
+	int j;
+	int i = 0;
+	char h[33];
+
+	while (num > 0)
+	{
+		int tmp = num % 16;
+
+		if (tmp < 10)
+			h[i] = tmp + '0';
+		else
+			h[i] = mode == 1 ? ('A' + (tmp - 10)) : ('a' + (tmp - 10));
+
+		num /= 16;
+		i++;
+	}
+
+	h[i] = '\0';
+
+	for (j = i - 1; j >= 0; j--)
+	{
+		len += _putchar('0');
+		len += _putchar(h[j]);
 	}
 
 	return (len);
