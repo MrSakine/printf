@@ -45,6 +45,12 @@ int print_number(int n, int mode)
 	unsigned int num = n;
 	int len = 1;
 
+	if (!n)
+	{
+		_putchar('0');
+		return (len);
+	}
+
 	if (mode == 0)
 	{
 		if (n < 0)
@@ -60,7 +66,6 @@ int print_number(int n, int mode)
 		{
 			_putchar('0');
 			len++;
-			return (len);
 		}
 	}
 
