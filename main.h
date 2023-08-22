@@ -7,6 +7,7 @@
 #include <stdarg.h>
 
 #define SPECIFIER_SIZE 11
+#define BUFF_SIZE 1024
 
 /**
  * struct print - A new struct type defining a print.
