@@ -69,7 +69,7 @@ int print_hexa_decimal(unsigned int num, int mode)
 		if (tmp < 10)
 			h[i] = tmp + '0';
 		else
-			h[i] = mode == 1 ? ('A' + (tmp - 10)) : ('a' + (tmp - 10));
+			h[i] = tmp < 10 ? (tmp + '0') : mode == 1 ? ('A' + (tmp - 10)) : ('a' + (tmp - 10));
 
 		num /= 16;
 		i++;
