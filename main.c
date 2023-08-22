@@ -29,5 +29,6 @@ int main(void)
 	len2 = printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
 	_printf("Length:[%d, %i]\n", len, len2);
 	printf("Length:[%d, %i]\n", len2, len2);
+	_printf("%S\n", "Best\rSchool");
 	return (0);
 }
