@@ -9,21 +9,7 @@
  */
 int _putchar(char c)
 {
-	static char buffer[BUFF_SIZE];
-	static int count;
-
-	if (c == '\0' || count >= BUFF_SIZE)
-	{
-		write(1, &buffer, count);
-		count = 0;
-	}
-
-	if (c != '\0')
-	{
-		buffer[count] = c;
-		count++;
-	}
-	return (1);
+	return (write(1, &c, 1));
 }
 
 /**
