@@ -17,12 +17,12 @@ int main(void)
 	ui = (unsigned int)INT_MAX + 5023;
 	_printf("Length:[%d, %i]\n", len, len2);
 	printf("Length:[%d, %i]\n", len2, len2);
-	len = _printf("Unsigned:[%u]\n", NULL);
-	len2 = printf("Unsigned:[%u]\n", NULL);
+	len = _printf("Unsigned:[%u]\n", ui);
+	len2 = printf("Unsigned:[%u]\n", ui);
 	_printf("Length:[%d, %i]\n", len, len2);
 	printf("Length:[%d, %i]\n", len2, len2);
-	len = _printf("Unsigned octal:[%o]\n", NULL);
-	len2 = printf("Unsigned octal:[%o]\n", NULL);
+	len = _printf("Unsigned octal:[%o]\n", ui);
+	len2 = printf("Unsigned octal:[%o]\n", ui);
 	_printf("Length:[%d, %i]\n", len, len2);
 	printf("Length:[%d, %i]\n", len2, len2);
 	len = _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
