@@ -47,6 +47,8 @@ int run(const char *format, va_list args)
 	int i = 0;
 	char buffer[BUFFER_SIZE];
 	int buffer_index = 0;
+	int j;
+	print_t *specifiers = get_specifiers();
 
 	if (base_check(format) == -1)
 		return (-1);
@@ -54,27 +56,20 @@ int run(const char *format, va_list args)
 	while (format && (*(format + i)))
 	{
 		if (*(format + i) != '%')
-		{
-			_add_to_buffer(buffer, &buffer_index, format + 1, 1);
-			len++;
-		}
+			len += _putchar(*(format + i));
 		else
 		{
 			format++;
 
 			if (*(format + i) == '%')
-			{
-				_add_to_buffer(buffer, &buffer_index, format, 1);
-				len++;
-			}
-			else if (*(format + i) == 's')
-				len += _print_string(args);
-			else if (*(format + i) == 'c')
-				len += _print_char(args);
-			else if (*(format + i) == 'd' || *(format + i) == 'i')
-				len += _print_number(args);
-			else if (*(format + i) == 'b')
-				len += _print_binary(args);
+				len += _putchar('%');
+
+			j = 0;
+			while (j < 10 && (*(format + i)) != *(specifiers[j].symbol))
+				j++;
+
+			if (j < 10)
+				len += specifiers[j].p(args);
 			else
 				len += _print_invalid_specifier_output(format, i);
 		}

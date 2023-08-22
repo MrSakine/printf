@@ -50,16 +50,14 @@ int _strlen(const char *str)
  * @arg: A list of arguments pointing to
  * the character to be printed
  *
- * Return: Returns 1 and 0 otherwise
+ * Return: Returns 1 and -1 otherwise
  */
 int _print_char(va_list arg)
 {
 	char letter;
 
 	letter = va_arg(arg, int);
-	_putchar(letter);
-
-	return (1);
+	return _putchar(letter);
 }
 
 /**
