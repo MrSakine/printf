@@ -23,7 +23,7 @@ int _print_string_ascii(va_list arg)
     {
         int n = *(str + i);
 
-        if ((n > 0 && n < 32) || n >= 127)
+        if (n > 0 && (n < 32 || n >= 127))
         {
             _puts("\\x0");
             len += 2;
@@ -31,8 +31,7 @@ int _print_string_ascii(va_list arg)
         }
         else
         {
-            _putchar(*(str + i));
-            len++;
+            len += _putchar(*(str + i));
         }
 
         i++;
