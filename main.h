@@ -7,15 +7,15 @@
 #include <stdarg.h>
 
 /**
- * struct printer - A new struct type defining a printer.
+ * struct print - A new struct type defining a print.
  * @symbol: A symbol representing a data type.
- * @print: A function pointer to a function that prints
+ * @p: A function pointer to a function that prints
  *         a data type corresponding to symbol.
  */
 typedef struct print
 {
-    char *symbol;
-    int (*p)(va_list args);
+	char *symbol;
+	int (*p)(va_list args);
 
 } print_t;
 
