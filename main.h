@@ -6,6 +6,8 @@
 #include <unistd.h>
 #include <stdarg.h>
 
+#define SPECIFIER_SIZE 11
+
 /**
  * struct print - A new struct type defining a print.
  * @symbol: A symbol representing a data type.
@@ -22,6 +24,7 @@ typedef struct print
 int _putchar(char c);
 void _puts(char *s);
 int _printf(const char *format, ...);
+int _print_percentage(va_list arg);
 int _print_char(va_list arg);
 int _print_string(va_list arg);
 int _print_string_ascii(va_list arg);
