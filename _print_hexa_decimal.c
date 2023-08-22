@@ -8,20 +8,20 @@
  */
 int _print_hexa_decimal_small(va_list args)
 {
-    unsigned int num = va_arg(args, unsigned int);
-    int len = 0;
+	unsigned int num = va_arg(args, unsigned int);
+	int len = 0;
 
-    if (num == 0)
-    {
-        _putchar('0');
-        len++;
-    }
-    else
-    {
-        len += print_hexa_decimal(num, 0);
-    }
+	if (num == 0)
+	{
+		_putchar('0');
+		len++;
+	}
+	else
+	{
+		len += print_hexa_decimal(num, 0);
+	}
 
-    return (len);
+	return (len);
 }
 
 /**
@@ -32,20 +32,20 @@ int _print_hexa_decimal_small(va_list args)
  */
 int _print_hexa_decimal_large(va_list args)
 {
-    unsigned int num = va_arg(args, unsigned int);
-    int len = 0;
+	unsigned int num = va_arg(args, unsigned int);
+	int len = 0;
 
-    if (num == 0)
-    {
-        _putchar('0');
-        len++;
-    }
-    else
-    {
-        len += print_hexa_decimal(num, 1);
-    }
+	if (num == 0)
+	{
+		_putchar('0');
+		len++;
+	}
+	else
+	{
+		len += print_hexa_decimal(num, 1);
+	}
 
-    return (len);
+	return (len);
 }
 
 /**
@@ -57,31 +57,31 @@ int _print_hexa_decimal_large(va_list args)
  */
 int print_hexa_decimal(unsigned int num, int mode)
 {
-    int len = 0;
-    int j;
-    int i = 0;
-    char h[33];
+	int len = 0;
+	int j;
+	int i = 0;
+	char h[33];
 
-    while (num > 0)
-    {
-        int tmp = num % 16;
+	while (num > 0)
+	{
+		int tmp = num % 16;
 
-        if (tmp < 10)
-            h[i] = tmp + '0';
-        else
-            h[i] = mode == 1 ? ('A' + (tmp - 10)) : ('a' + (tmp - 10));
+		if (tmp < 10)
+			h[i] = tmp + '0';
+		else
+			h[i] = mode == 1 ? ('A' + (tmp - 10)) : ('a' + (tmp - 10));
 
-        num /= 16;
-        i++;
-    }
+		num /= 16;
+		i++;
+	}
 
-    h[i] = '\0';
+	h[i] = '\0';
 
-    for (j = i - 1; j >= 0; j--)
-    {
-        _putchar(h[j]);
-        len++;
-    }
+	for (j = i - 1; j >= 0; j--)
+	{
+		_putchar(h[j]);
+		len++;
+	}
 
-    return (len);
+	return (len);
 }
