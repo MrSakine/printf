@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _print_binary - prints an unsigned integer in binary format
+ * _print_string_ascii - writes the character c to stdout
  * @args: A list of arguments containing the integer to print
  *
  * Return: number of characters printed (int)
