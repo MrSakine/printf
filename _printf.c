@@ -58,14 +58,12 @@ int run(const char *format, va_list args)
 		else
 		{
 			format++;
-			if (*(format + i) == '%')
-				len += _putchar('%');
-
 			j = 0;
-			while (j < 10 && (*(format + i)) != *(specifiers[j].symbol))
+
+			while (j < SPECIFIER_SIZE && (*(format + i)) != *(specifiers[j].symbol))
 				j++;
 
-			if (j < 10)
+			if (j < SPECIFIER_SIZE)
 				len += specifiers[j].p(args);
 			else
 				len += _print_invalid_specifier_output(format, i);
