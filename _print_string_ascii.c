@@ -25,9 +25,9 @@ int _print_string_ascii(va_list arg)
 
 		if (n > 0 && (n < 32 || n >= 127))
 		{
-			_puts("\\x0");
+			_puts("\\x");
 			len += 2;
-			len += print_hexa_decimal(n, 1);
+			len += print_hexa_decimal_leading_zero(n, 1);
 		}
 		else
 		{
