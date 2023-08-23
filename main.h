@@ -6,7 +6,7 @@
 #include <unistd.h>
 #include <stdarg.h>
 
-#define SPECIFIER_SIZE 13
+#define SPECIFIER_SIZE 12
 #define BUFF_SIZE 1024
 
 /**
