@@ -10,22 +10,22 @@
  */
 int _print_reverse_string(va_list arg)
 {
-    char *c;
-    int i;
-    int j;
-    int len = 0;
+	char *c;
+	int i;
+	int j;
+	int len = 0;
 
-    c = va_arg(arg, char *);
-    if (c == NULL)
-    {
-        c = "(null)";
-    }
+	c = va_arg(arg, char *);
+	if (c == NULL)
+	{
+		c = "(null)";
+	}
 
-    for (i = 0; c[i]; i++)
-        len++;
+	for (i = 0; c[i]; i++)
+		len++;
 
-    for (j = i - 1; j >= 0; j--)
-        _putchar(c[j]);
+	for (j = i - 1; j >= 0; j--)
+		_putchar(c[j]);
 
-    return (len);
+	return (len);
 }
