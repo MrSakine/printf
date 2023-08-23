@@ -10,8 +10,10 @@ int main(void)
 {
 	int len;
 
-	_printf("Unknown:[%r]\n", "hello");
-	len = _printf("%r\n", "Best School");
+	_printf("Unknown:[%R]\n", "hello");
+	len = _printf("%R\n", "ROT13 (\"rotate by 13 places\", sometimes hyphenated ROT-13) is a simple letter substitution cipher");
+	_printf("Len:[%d]\n", len);
+	len = _printf("%R\n", "EBG13 (\"ebgngr ol 13 cynprf\", fbzrgvzrf ulcurangrq EBG-13) vf n fvzcyr yrggre fhofgvghgvba pvcure");
 	_printf("Len:[%d]\n", len);
 
 	return (0);
