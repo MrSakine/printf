@@ -18,6 +18,7 @@ print_t *get_specifiers()
 		{"x", _print_hexa_decimal_small},
 		{"X", _print_hexa_decimal_large},
 		{"S", _print_string_ascii},
+		{"r", _print_reverse_string},
 		{"%", _print_percentage},
 	};
 

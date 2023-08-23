@@ -6,7 +6,7 @@
 #include <unistd.h>
 #include <stdarg.h>
 
-#define SPECIFIER_SIZE 11
+#define SPECIFIER_SIZE 12
 #define BUFF_SIZE 1024
 
 /**
@@ -29,6 +29,7 @@ int _print_percentage(va_list arg);
 int _print_char(va_list arg);
 int _print_string(va_list arg);
 int _print_string_ascii(va_list arg);
+int _print_reverse_string(va_list arg);
 int _print_number(va_list arg);
 int _print_unsigned_number(va_list arg);
 int base_check(const char *f);
