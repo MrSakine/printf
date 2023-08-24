@@ -17,6 +17,17 @@ int _print_address(va_list args)
 
 	num = (uintptr_t)ptr;
 
+	if (num == '0')
+	{
+		_putchar('(');
+		_putchar('n');
+		_putchar('i');
+		_putchar('l');
+		_putchar(')');
+		return (4);
+	}
+
+
 	while (num > 0)
 	{
 		digit = num % 16;
