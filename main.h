@@ -7,7 +7,7 @@
 #include <stdarg.h>
 #include <stdint.h>
 
-#define SPECIFIER_SIZE 13
+#define SPECIFIER_SIZE 14
 #define BUFF_SIZE 1024
 
 /**
