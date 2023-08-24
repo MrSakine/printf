@@ -19,5 +19,8 @@ int main(void)
 	len = _printf("%R\n", "EBG13 (\"ebgngr ol 13 cynprf\", fbzrgvzrf ulcurangrq EBG-13) vf n fvzcyr yrggre fhofgvghgvba pvcure");
 	_printf("Len:[%d]\n", len);
 
+	
+	_printf("%p\n", NULL);
+
 	return (0);
 }
