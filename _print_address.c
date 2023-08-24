@@ -16,7 +16,6 @@ int _print_address(va_list args)
 	uintptr_t num;
 
 	num = (uintptr_t)ptr;
-
 	if (num == '0')
 	{
 		_putchar('(');
@@ -26,8 +25,6 @@ int _print_address(va_list args)
 		_putchar(')');
 		return (4);
 	}
-
-
 	while (num > 0)
 	{
 		digit = num % 16;
@@ -36,12 +33,9 @@ int _print_address(va_list args)
 		index++;
 		num /= 16;
 	}
-
 	len = (index == 0) ? 1 : index + 2;
-
 	_putchar('0');
 	_putchar('x');
-
 	if (index == 0)
 	{
 		_putchar('0');
