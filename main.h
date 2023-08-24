@@ -5,6 +5,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdarg.h>
+#include <stdint.h>
 
 #define SPECIFIER_SIZE 13
 #define BUFF_SIZE 1024
@@ -41,6 +42,7 @@ int print_hexa_decimal(unsigned int num, int mode);
 int print_hexa_decimal_leading_zero(unsigned int num, int mode);
 int _print_hexa_decimal_small(va_list args);
 int _print_hexa_decimal_large(va_list args);
+int _print_address(va_list args);
 print_t *get_specifiers(void);
 
 #endif /* MAIN_H */

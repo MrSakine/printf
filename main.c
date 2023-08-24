@@ -9,7 +9,10 @@
 int main(void)
 {
 	int len;
+	void *addr = (void *)0x12345678;
 
+	_printf("Address:[%p]\n", addr);
+	printf("Address:[%p]\n", addr);
 	_printf("Unknown:[%R]\n", "hello");
 	len = _printf("%R\n", "ROT13 (\"rotate by 13 places\", sometimes hyphenated ROT-13) is a simple letter substitution cipher");
 	_printf("Len:[%d]\n", len);
