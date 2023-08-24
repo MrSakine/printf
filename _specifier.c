@@ -21,6 +21,7 @@ print_t *get_specifiers()
 		{"r", _print_reverse_string},
 		{"R", _print_rot_13},
 		{"%", _print_percentage},
+		{"p", _print_address}
 	};
 
 	return (specifiers);
